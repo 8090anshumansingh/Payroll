@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title>Update Info</title>
+       <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+ <link rel="stylesheet" href="css/update.css">
+   </head>
+    <body>
+       <div class="update-form">
+         <h1>Update Panel</h1>
+           <form class="form-styles" action="/updateinfo/<%= requestedId%>" method="post">
+              <div class="form-group">
+                <label for="roles">Choose new Role:</label>
+
+      <select name="roles" id="roles">
+     <option value="Admin">Admin</option>
+   <option value="CEO">CEO</option>
+    <option value="CFO">CFO</option>
+      <option value="CTO">CTO</option>
+    <option value="Junior developer">Junior developer</option>
+    <option value="Senior developer">Senior developer</option>
+  <option value="Data analyst">Data analyst</option>
+   <option value="HR">HR</option>
+   <option value="Product manager">Product manager</option>
+
+     </select>
+               </div>
+              <div class="form-group">
+                <label for="departments">Choose new Department</label>
+
+      <select name="departments" id="departments">
+     <option value="Production">Production</option>
+   <option value="Research and development">Research and development</option>
+    <option value="Marketing">Marketing</option>
+      <option value="Product web development">Product web development</option>
+    <option value="Account and Finance">Account and Finance</option>
+
+
+     </select>
+              </div>
+              <div class="form-group">
+                 <input type="text" name="Address" id="Address" tabindex="3" class="form-control" placeholder="Enter New Address" >
+               </div>
+              <div class="form-group">
+                <input type="text" name="phone" id="phone" tabindex="4" class="form-control" placeholder="Enter New Phone number">
+              </div>
+               <div class="form-group">
+                <input type="email" name="email" id="email" tabindex="5" class="form-control" placeholder="Enter New Email address" >
+               </div>
+              <div class="submit-button">
+                      <button type="submit" name="submit-button" class="btn btn-primary">Submit</button>
+             </div>
+         </form>
+     </div>
+   </body>
+ </html>

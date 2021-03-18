@@ -1,0 +1,59 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+     <meta charset="utf-8">
+     <title>Admin Panel</title>
+     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+ <link rel="stylesheet" href="css/admin.css">
+   </head>
+   <body>
+
+     <table style="width:100%">
+    <tr>
+     <th>EmpId</th>
+     <th>Employee Name</th>
+     <th>RoleName</th>
+     <th>Department Name</th>
+     <th>Address</th>
+     <th>Phone</th>
+     <th>Email</th>
+     <th>Total Salary(in LPA)</th>
+     <th>Tax(in %)</th>
+     <th>Bonus(in %)</th>
+     <th>Update Info</th>
+   </tr>
+
+   <% var i=0; %>
+  <%  employees.forEach(function(employee){ %>
+    <tr>
+       <td><%=employee.EmpId%></td>
+       <td><%=employee.EmpName%></td>
+      <td><%=rolenames[employee.RoleId-1].RollName%></td>
+      <td><%=deptnames[employee.DeptId-1].DepartmentName %></td>
+      <td><%=employee.Address%></td>
+      <td><%=employee.phone%></td>
+      <td><%=employee.email%></td>
+       <% var idx= ids.indexOf(employee.RoleId); %>
+       <td><%=salaryDetails[idx].Ammout %></td>
+   <td><%=salaryDetails[idx].tax %></td>
+   <td><%=salaryDetails[idx].bonus %></td>
+   <% var eid= employee.EmpId ;%>
+   <td><a href="/update/<%= eid %>" ><button class="btn btn-danger" >Update</button>
+   </a></td>
+
+
+
+   </tr>
+<%   i++; })  %>
+
+
+ </table>
+ <div class="logout-button">
+   <a href="/"><button class="btn btn-primary" >Log Out</button>
+   </a>
+ </div>
+
+   </body>
+ </html>

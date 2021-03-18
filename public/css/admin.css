@@ -1,0 +1,10 @@
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+.logout-button {
+  text-align: center;
+  padding-top: 100px;
+}
